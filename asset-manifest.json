@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/A-star-maze-traversal/static/css/main.168c46f0.chunk.css",
+    "main.js": "/A-star-maze-traversal/static/js/main.e1d077b3.chunk.js",
+    "main.js.map": "/A-star-maze-traversal/static/js/main.e1d077b3.chunk.js.map",
+    "runtime-main.js": "/A-star-maze-traversal/static/js/runtime-main.752d4319.js",
+    "runtime-main.js.map": "/A-star-maze-traversal/static/js/runtime-main.752d4319.js.map",
+    "static/js/2.1e9e74be.chunk.js": "/A-star-maze-traversal/static/js/2.1e9e74be.chunk.js",
+    "static/js/2.1e9e74be.chunk.js.map": "/A-star-maze-traversal/static/js/2.1e9e74be.chunk.js.map",
+    "index.html": "/A-star-maze-traversal/index.html",
+    "precache-manifest.2297016a5dc6c159ee17a9378d113559.js": "/A-star-maze-traversal/precache-manifest.2297016a5dc6c159ee17a9378d113559.js",
+    "service-worker.js": "/A-star-maze-traversal/service-worker.js",
+    "static/css/main.168c46f0.chunk.css.map": "/A-star-maze-traversal/static/css/main.168c46f0.chunk.css.map",
+    "static/js/2.1e9e74be.chunk.js.LICENSE.txt": "/A-star-maze-traversal/static/js/2.1e9e74be.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.752d4319.js",
+    "static/js/2.1e9e74be.chunk.js",
+    "static/css/main.168c46f0.chunk.css",
+    "static/js/main.e1d077b3.chunk.js"
+  ]
+}
