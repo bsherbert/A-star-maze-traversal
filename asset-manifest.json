@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/A-star-maze-traversal/static/css/main.8b8d9b3e.chunk.css",
-    "main.js": "/A-star-maze-traversal/static/js/main.64764a28.chunk.js",
-    "main.js.map": "/A-star-maze-traversal/static/js/main.64764a28.chunk.js.map",
+    "main.js": "/A-star-maze-traversal/static/js/main.989fb9b9.chunk.js",
+    "main.js.map": "/A-star-maze-traversal/static/js/main.989fb9b9.chunk.js.map",
     "runtime-main.js": "/A-star-maze-traversal/static/js/runtime-main.752d4319.js",
     "runtime-main.js.map": "/A-star-maze-traversal/static/js/runtime-main.752d4319.js.map",
-    "static/js/2.1e9e74be.chunk.js": "/A-star-maze-traversal/static/js/2.1e9e74be.chunk.js",
-    "static/js/2.1e9e74be.chunk.js.map": "/A-star-maze-traversal/static/js/2.1e9e74be.chunk.js.map",
+    "static/js/2.b6a76a11.chunk.js": "/A-star-maze-traversal/static/js/2.b6a76a11.chunk.js",
+    "static/js/2.b6a76a11.chunk.js.map": "/A-star-maze-traversal/static/js/2.b6a76a11.chunk.js.map",
     "index.html": "/A-star-maze-traversal/index.html",
-    "precache-manifest.9d3bdbaef88418537a615b0f14b5110a.js": "/A-star-maze-traversal/precache-manifest.9d3bdbaef88418537a615b0f14b5110a.js",
+    "precache-manifest.b7d8de9032ea6c358e9684bc2eb18290.js": "/A-star-maze-traversal/precache-manifest.b7d8de9032ea6c358e9684bc2eb18290.js",
     "service-worker.js": "/A-star-maze-traversal/service-worker.js",
     "static/css/main.8b8d9b3e.chunk.css.map": "/A-star-maze-traversal/static/css/main.8b8d9b3e.chunk.css.map",
-    "static/js/2.1e9e74be.chunk.js.LICENSE.txt": "/A-star-maze-traversal/static/js/2.1e9e74be.chunk.js.LICENSE.txt"
+    "static/js/2.b6a76a11.chunk.js.LICENSE.txt": "/A-star-maze-traversal/static/js/2.b6a76a11.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.752d4319.js",
-    "static/js/2.1e9e74be.chunk.js",
+    "static/js/2.b6a76a11.chunk.js",
     "static/css/main.8b8d9b3e.chunk.css",
-    "static/js/main.64764a28.chunk.js"
+    "static/js/main.989fb9b9.chunk.js"
   ]
 }
