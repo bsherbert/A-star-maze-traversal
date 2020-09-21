@@ -1,0 +1,8 @@
+.row:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+.maze{
+  background: #ddd;
+}

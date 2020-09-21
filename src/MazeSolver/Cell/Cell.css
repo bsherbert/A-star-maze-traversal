@@ -1,0 +1,94 @@
+@keyframes bounce{
+  0%{ transform: scale(1.2);}
+  
+  100%{transform: scale(1.0);}
+}
+
+.cell{
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 26px;
+    height: 26px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    padding: 0;
+    text-align: center;
+    width: 26px;
+    font-family: "Wingdings";
+
+}
+.cell:focus{
+  outline: none;
+}
+.open-cell {
+    background: #deecf7;
+    border: 1px solid #becbd6;
+  }
+.wall-cell {
+  background: #4185b9;
+    border: 1px solid #becbd6;
+    animation-name: bounce;
+    animation-duration: .25s;
+  }
+  .wall-cell-seen {
+    background: #2a577a;
+    border: 1px solid #becbd6;
+  }
+.start-cell {
+    background: rgb(0, 212, 0);
+    border: 1px solid rgb(0, 212, 0);
+  }
+.goal-cell {
+    background: #f00;
+    border: 1px solid #f00;
+    }
+  .cList-cell {
+    background: #05b;
+    border: 1px solid #becbd6;
+    animation-name: bounce;
+    animation-duration: .25s;
+  }  
+  .cList-cell-w {
+    background: rgb(33, 100, 94);
+    border: 1px solid #becbd6;
+    animation-name: bounce;
+    animation-duration: .25s;
+  }
+  .projected-path-cell{
+    background: rgb(255, 199, 114);
+    border: 1px solid rgb(255, 199, 114);
+    animation-name: bounce;
+    animation-duration: .25s;
+  }
+  .projected-path-cell-w{
+    background: rgb(255, 153, 0);
+    border: 1px solid rgb(255, 153, 0);
+    animation-name: bounce;
+    animation-duration: .25s;
+   }
+  .traversed-cell {
+    background: #d8b7d5;
+    border: 1px solid #d8b7d5;
+    animation-name: bounce;
+    animation-duration: 1s;
+  }  
+  .traversed-cell-goal {
+    background: rgb(255, 192, 57);
+    border: 1px solid rgb(255, 192, 57);
+  }  .final-path-cell {
+    background-color: #d8b7d5;
+    border: 1px solid #d8b7d5;
+    animation-name: bounce;
+    animation-duration: .25s;
+
+
+  }
+  .texture{
+    height: 26px;
+    width: 26px;
+    background-image: url('./Images/dothatchh.png'); 
+    opacity: .1;
+  }
