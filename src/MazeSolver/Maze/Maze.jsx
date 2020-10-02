@@ -890,9 +890,13 @@ export default class Maze extends Component{
                         updateNeeded: true});
     }
 
-    handleFasClick(){
+    async handleFasClick(){
         if(this.state.inProgress){
             return;
+        }
+        
+        if(this.state.updateNeeded){
+            await this.handleResetClick();
         }
         if(this.state.startLocation === null || this.state.goalLocation === null){
             alert("must have a start and goal");
