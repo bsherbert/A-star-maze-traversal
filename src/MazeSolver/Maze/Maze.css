@@ -1,5 +1,37 @@
 .row{
     margin: 0 auto;
     width: 1300px;
-    background: #ccc;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.maze{
+    margin-top: 20px;
+}
+
+.menu{
+    background-color: #cccccc;
+    padding: 15px;
+}
+
+.instructions{
+    margin-top: 20px;
+}
+
+.btn-outline-primary{
+    margin: 2px;
+}
+
+.btn-outline-primary:focus{
+    outline: none !important;
+    box-shadow: none;
+}
+
+.btn-outline-primary:hover{
+    background-color: #4ba2ff;
 }

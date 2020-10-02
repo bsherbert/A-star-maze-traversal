@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './Maze.css';
 import Cell from '../Cell/Cell'
 import PriorityQueue from '../PriorityQueue';
@@ -96,9 +97,68 @@ export default class Maze extends Component{
 
     //adjusts the action variable based on the last button pressed
     handleButtonClick(buttonClicked){
-        this.setState({
-            action: buttonClicked,
-        });
+        
+        let oldButton = this.state.action;
+
+        if(buttonClicked !== this.state.action){
+            this.setState({
+                action: buttonClicked,
+            });
+
+            var temp;
+
+            //unhighlight old button
+            switch(oldButton){
+                case "s":
+                    temp = document.getElementsByClassName("start-button");
+                    break;
+                case "g":
+                    temp = document.getElementsByClassName("goal-button");
+                    break;
+                case "w":
+                    temp = document.getElementsByClassName("wall-button");
+                    break;
+                case "c":
+                    temp = document.getElementsByClassName("clear-button");
+                    break;
+
+                default:
+                    break;
+            }
+
+            
+            temp[0].style.background = null;
+            temp[0].style.color=null;
+
+            //highlight new button
+            switch(buttonClicked){
+                case "s":
+                    temp = document.getElementsByClassName("start-button");
+
+                    break;
+                case "g":
+                    temp = document.getElementsByClassName("goal-button");
+
+                    break;
+                case "w":
+                    temp = document.getElementsByClassName("wall-button");
+
+                    break;
+                case "c":
+                    temp = document.getElementsByClassName("clear-button");
+
+                    break;
+
+                default:
+                    break;
+            }
+            
+            temp[0].style.background = '#007bff';
+            temp[0].style.color = "white";
+
+        }
+
+
     }
 
     //create a random maze layout
@@ -151,6 +211,19 @@ export default class Maze extends Component{
             return;
         }
         this.setState({showExtraAnimations: !this.state.showExtraAnimations});
+
+        var temp = document.getElementsByClassName("ToggleAnimations");
+
+        if(!this.state.showExtraAnimations){
+            
+            temp[0].style.background = '#007bff';
+            temp[0].style.color = "white";
+        }
+        else{
+            temp[0].style.background=null;
+            temp[0].style.color = null;
+        }
+
     }
 
     //shows logs for debugging
@@ -889,54 +962,55 @@ export default class Maze extends Component{
         return (
             //renders menu buttons
             //renders mazeSize cells in 5 rows of 5
-            <div>
+            <div class="content">
+            <h1>A* MAZE TRAVERSAL</h1>
                 <div className="menu">
-                    <button 
-                        className="start-button"
-                        onClick={() => this.handleButtonClick("s")}
-                        >place start</button>
-                    <button 
-                        className="goal-button"
-                        onClick={() => this.handleButtonClick("g")}
-                        >place goal</button>
-                    <button 
-                        className="wall-button"
-                        onClick={() => this.handleButtonClick("w")}
-                        >place wall</button>
-                    <button 
-                        className="clear-button"
-                        onClick={() => this.handleButtonClick("c")}
-                        >clear cell</button>
-                    <button
-                        className="randomize"
-                        onClick={() => this.handleRandomizeClick()}
-                        >randomize maze</button>
-                    <button
-                        className="clear"
-                        onClick={() => this.handleClearClick()}
-                        >clear maze</button>
-                    <button
-                        className="ToggleAnimations"
-                        onClick={() => this.handleAnimationsClick()}
-                        >Toggle Extra Animations</button>
-                        
+                    <div class="menu-row-1">
+                        <button 
+                            className="start-button btn-outline-primary"
+                            onClick={() => this.handleButtonClick("s")}
+                            selected>place start</button>
+                        <button 
+                            className="goal-button btn-outline-primary"
+                            onClick={() => this.handleButtonClick("g")}
+                            >place goal</button>
+                        <button 
+                            className="wall-button btn-outline-primary"
+                            onClick={() => this.handleButtonClick("w")}
+                            >place wall</button>
+                        <button 
+                            className="clear-button btn-outline-primary"
+                            onClick={() => this.handleButtonClick("c")}
+                            >clear cell</button>
+                    </div>    
+                    <div class="menu-row-2">
+                        <button
+                            className="ToggleAnimations btn-outline-primary"
+                            onClick={() => this.handleAnimationsClick()}
+                            >Toggle Extra Animations</button>
+                        <button
+                            className="randomize btn-outline-primary"
+                            onClick={() => this.handleRandomizeClick()}
+                            >randomize maze</button>
+                        <button
+                            className="clear btn-outline-primary"
+                            onClick={() => this.handleClearClick()}
+                            >clear maze</button>      
+                        <button
+                            className="reset btn-outline-primary"
+                            onClick={() => this.handleResetClick()}>reload last maze</button>
+                    </div>
+                    <div class="menu-row-3">
+                        <button className="fas btn-outline-primary"
+                            onClick={() => this.handleFasClick()}>Start!</button>
+                    </div>
                 </div>
                 <div className = "maze">
                     {maze}
                 </div>
-                <div className = "debug">
-                    <button 
-                    className="debug"
-                    onClick={() => this.handleDebugClick()}>debug</button>
-                </div>
-                <div className="fas">
-                    <button className="fas"
-                    onClick={() => this.handleFasClick()}>fas</button>
-                </div>
-                <div className="reset">
-                    <button
-                        className="reset"
-                        onClick={() => this.handleResetClick()}>reload last maze</button>
+                <div class="instructions">
+                    <h2>Instructions</h2>
+                    <p>body text here</p>
                 </div>
             </div>
         );
