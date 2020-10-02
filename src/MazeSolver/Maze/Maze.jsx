@@ -1063,26 +1063,26 @@ export default class Maze extends Component{
 
                     <h2>What is A*?</h2>
                     <div class="description">
-                        <p>Repeated Forward A* is a heuristic pathfinding algorithm. An agent in a maze calculates a percieved optimal path towards the goal using a straight-line heuristic.
+                        <p>Repeated Forward A* is a heuristic pathfinding algorithm. An agent in a maze calculates a perceived optimal path towards the goal using a straight-line heuristic.
                         The agent begins with knowledge of the size of the environment, it's own location, and the location of the goal, but no knowledge of potential obstacles.
                         It keeps track of three values for each cell:</p>
                         <ul>
-                            <li>The 'g' value tracks the current distance from the given cell to the agent. </li>
-                            <li>The 'h' value tracks the shortest distance from the given cell to the goal regardless of possible obstacles.</li>
-                            <li>The 'f' value tracks the sum of the g and h values.</li>
+                            <li>The 'g' value represents the current distance from the given cell to the agent. </li>
+                            <li>The 'h' value represents the shortest distance from the given cell to the goal regardless of possible obstacles.</li>
+                            <li>The 'f' value represents the sum of the g and h values.</li>
                         </ul>
                         <h5>The algorithm proceeds in 3 main steps:</h5>
                         <ol>
                             <li>The agent will determine a path following the smallest f values from it's current location to the goal.</li>
                             <li>The agent will proceed along this path until either the goal is reached or an obstacle is found to be in its way.</li>
-                            <li>The agent will update it's knowledge of the environment by tracking any walls it passed</li>
+                            <li>The agent will update it's knowledge of the environment by tracking any walls it passed.</li>
                         </ol>
                         <p>This process will repeat until the goal is reached or it determines there is no path to the goal.</p>
-                        <h5>Additional Comments</h5>
+                        <h5>Additional Comments:</h5>
                         <ul>
                             <li>To deal with ties in f values, this agent gives precendence to cells based on their position relative to itself in the following order: <br/>below->right->above->left</li>                        
                             <li>While the agent does keep track of walls, it does not update the heuristic value in response, so it may waste time re-checking cells it wouldn't otherwise need to.</li>
-                            <li>That algorithm is called adaptive A*, which trades off time to update heuristic values for the potential to avoid unneccessary cell checks.</li>
+                            <li>The algorithm which updates heuristic values is called adaptive A*. It trades off time to calculate new heuristic values for the potential to avoid unneccessary cell checks.</li>
                             <li>These algorithms are not guarenteed to take an optimal path due to the possibility of running into obstacles and requiring backtracking, but they do guarentee that a path is found if it exists.</li>                
                         </ul>
                     </div>
