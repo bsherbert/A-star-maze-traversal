@@ -168,7 +168,6 @@ export default class Maze extends Component{
         const cells = this.state.cells.slice();
         //pick a random starting point
         let s = Math.floor(Math.random() * mazeSize);
-        //console.log(s);
 
         //pick a random goal that is not the same as the start point
         let r = s;
@@ -206,6 +205,7 @@ export default class Maze extends Component{
                         updateNeeded: false});
     }
 
+    //toggle whether extra animations are shown when running the algorithm
     handleAnimationsClick(){
         if(this.state.inProgress){
             return;
@@ -242,9 +242,10 @@ export default class Maze extends Component{
         for(let i=0; i<mazeSize; i++){
             console.log("blocked " + i + ": " + blockedMemory[i]);
         }
-*/
+        */
     }
 
+    //debugging fuction for printing current values in cells
     debugMaze(dataCells){
         for(let i=0; i<mazeSize; i++){
             console.log("index: " + i);
@@ -258,6 +259,7 @@ export default class Maze extends Component{
         }
     }
 
+    //additional debug information
     debugProjectedPath(dataCells, currentCell, alg){
         var pointer = dataCells[this.state.goalLocation];
         var upTo = currentCell;
@@ -503,18 +505,11 @@ export default class Maze extends Component{
         //might not do anything...
         oList.enqueue(currentCell, currentCell.fVal);
 
-        //makes the goal in the open list
-        /*
-        //a***************************************
-        cells = this.state.cells.slice();
-        cells[currentCell.position] = "ol";
-        this.setState({cells: cells});
-        //a***************************************
-        */
         return visitedCells;
 
     }
 
+    //animates the closed list while running the algorithm
     async animateClosedList(visitedCells){
         const totalTime = (visitedCells.length * clWaitTime) + clWaitTime
         return new Promise(resolve =>{
@@ -545,6 +540,7 @@ export default class Maze extends Component{
         });
     }
 
+    //animates the projected path of the agent
     async animateProjectedPath(path){
             const totalTime = (path.length * ppWaitTime) + ppWaitTime;
             //console.log("total pp time = " + totalTime);
@@ -572,6 +568,7 @@ export default class Maze extends Component{
             });        
     }
 
+    //displays the projected path of the agent all at once
     showProjectedPath(path){
         const cells = this.state.cells.slice();
         for(let i=0; i<path.length; i++){
@@ -589,6 +586,7 @@ export default class Maze extends Component{
         this.setState({cells: cells});
     }
 
+    //animate the agent traveling along it's projected path
     async animateTraversal(path){
         const totalTime = (path.length * travWaitTime) + travWaitTime;
         //console.log("total t time = " + totalTime);
@@ -625,6 +623,7 @@ export default class Maze extends Component{
 
     }
 
+    //animate the full path taken by the agent
     async animateFinalPath(path){
         const totalTime = (path.length * finalWaitTime) + finalWaitTime;
         //console.log("total fp time = " + totalTime);
@@ -665,6 +664,7 @@ export default class Maze extends Component{
 
     }
 
+    //update wall values based on if the agent has seen them or not
     updateWalls(dataCells){
         const cells = this.state.cells.slice();
         for(let i=0; i<mazeSize; i++){
@@ -684,6 +684,7 @@ export default class Maze extends Component{
         this.setState({cells: cells});
     }
 
+    //reset traversed cells, seen walls, and other special cell colors to their original states prior to running the algorithm
     resetBoardStates(dataCells, clCells){
         var currentCell;
         const cells = this.state.cells.slice();
@@ -890,11 +891,12 @@ export default class Maze extends Component{
                         updateNeeded: true});
     }
 
+    //Execute the A* algorithm on the current maze
     async handleFasClick(){
         if(this.state.inProgress){
             return;
         }
-        
+        //allows maze to begin without needing to press reset after previously running the algorithm
         if(this.state.updateNeeded){
             await this.handleResetClick();
         }
@@ -915,6 +917,7 @@ export default class Maze extends Component{
         this.forwardAStar(oList, dataCells);
     }
 
+    //Revert maze to the last completed maze
     async handleResetClick(){
         if(this.state.inProgress){
             return;
