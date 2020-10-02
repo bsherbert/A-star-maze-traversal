@@ -972,105 +972,123 @@ export default class Maze extends Component{
             <div class="content">
                 <div class="topbar">
                     <h1>A* MAZE TRAVERSAL</h1>
-                    <div className="menu">
-                        <div class="menu-row-1">
-                            <button 
-                                className="start-button btn-outline-primary"
-                                onClick={() => this.handleButtonClick("s")}
-                                selected>Place Start</button>
-                            <button 
-                                className="goal-button btn-outline-primary"
-                                onClick={() => this.handleButtonClick("g")}
-                                >Place Goal</button>
-                            <button 
-                                className="wall-button btn-outline-primary"
-                                onClick={() => this.handleButtonClick("w")}
-                                >Place Wall</button>
-                            <button 
-                                className="clear-button btn-outline-primary"
-                                onClick={() => this.handleButtonClick("c")}
-                                >Clear Cell</button>
-                        </div>    
-                        <div class="menu-row-2">
-                            <button
-                                className="ToggleAnimations btn-outline-primary"
-                                onClick={() => this.handleAnimationsClick()}
-                                >Toggle Extra Animations</button>
-                            <button
-                                className="randomize btn-outline-primary"
-                                onClick={() => this.handleRandomizeClick()}
-                                >Randomize Maze</button>
-                            <button
-                                className="clear btn-outline-primary"
-                                onClick={() => this.handleClearClick()}
-                                >Clear Maze</button>      
-                            <button
-                                className="reset btn-outline-primary"
-                                onClick={() => this.handleResetClick()}>Reload Last Maze</button>
-                        </div>
-                        <div class="menu-row-3">
-                            <button className="fas btn-outline-primary"
-                                onClick={() => this.handleFasClick()}>Start!</button>
-                        </div>
-                    </div>
                 </div>
                 <div className = "maze">
-                    {maze}
+                        {maze}
                 </div>
+                <div className="menu">
+                    <div class="menu-row-1">
+                        <button 
+                            className="start-button btn-outline-primary"
+                            onClick={() => this.handleButtonClick("s")}
+                            selected>Place Start</button>
+                        <button 
+                            className="goal-button btn-outline-primary"
+                            onClick={() => this.handleButtonClick("g")}
+                            >Place Goal</button>
+                        <button 
+                            className="wall-button btn-outline-primary"
+                            onClick={() => this.handleButtonClick("w")}
+                            >Place Wall</button>
+                        <button 
+                            className="clear-button btn-outline-primary"
+                            onClick={() => this.handleButtonClick("c")}
+                            >Clear Cell</button>
+                    </div>    
+                    <div class="menu-row-2">
+                        <button
+                            className="ToggleAnimations btn-outline-primary"
+                            onClick={() => this.handleAnimationsClick()}
+                            >Toggle Extra Animations</button>
+                        <button
+                            className="randomize btn-outline-primary"
+                            onClick={() => this.handleRandomizeClick()}
+                            >Randomize Maze</button>
+                        <button
+                            className="clear btn-outline-primary"
+                            onClick={() => this.handleClearClick()}
+                            >Clear Maze</button>      
+                        <button
+                            className="reset btn-outline-primary"
+                            onClick={() => this.handleResetClick()}>Reload Last Maze</button>
+                    </div>
+                    <div class="menu-row-3">
+                        <button className="fas btn-outline-primary"
+                            onClick={() => this.handleFasClick()}>Start!</button>
+                    </div>
+                </div>
+
                 <div class="instructions">
                     <h2>Instructions</h2>
-                    <h4>controls</h4>
-
+                    <p>Place a start, a goal, and some walls, then watch the AI solve the maze!</p>
                     <div class="controls">
-                        <div class="buttons">
+                        <div class="button-pair">
                             <button>Place Start</button> 
+                            <div class="text">Click to select, then click a location on the grid to select a starting point</div>
+                        </div>
+                        <div class="button-pair">
                             <button>Place Goal</button> 
+                            <div class="text">Click to select, then click a location on the grid to select a goal location</div>
+                        </div>    
+                        <div class="button-pair">
                             <button>Place Wall</button> 
+                            <div class="text">Click to select, then click a location on the grid to place an obstacle that can't be passed through</div>
+                        </div>
+                        <div class="button-pair">
                             <button>Clear Cell</button> 
+                            <div class="text">Click to select, then click a location on the grid to remove any placed objects</div>
+                        </div>
+                        <div class="button-pair">
                             <button>Toggle Extra Animations</button> 
+                            <div class="text">Click to toggle. When highlighted, will show all cells the agent considered entering</div>
+                        </div>
+                        <div class="button-pair">
                             <button>Randomize Maze</button> 
+                            <div class="text">Create a random maze. Start/Goal locations are randomized. Other cells have a 30% chance to be a wall</div>
+                        </div>
+                        <div class="button-pair">
                             <button>Clear Maze</button> 
+                            <div class="text">Revert all cells back to empty spaces</div>
+                        </div>
+                        <div class="button-pair">
                             <button>Reload Last Maze</button> 
+                            <div class="text">Revert all cells back to the previously traversed maze</div>
+                        </div>
+                        <div class="button-pair">
                             <button>Start!</button> 
+                            <div class="text">Start the algorithm on the current maze. Must have a start and a goal</div>
+                        </div>
 
-                        </div>
-                        <div class="button-descriptions">
-                            <div>Click to select, then click a location on the grid to select a starting point</div>
-                            <div>Click to select, then click a location on the grid to select a goal location</div>
-                            <div>Click to select, then click a location on the grid to place an obstacle that can't be passed through</div>
-                            <div>Click to select, then click a location on the grid to remove any placed objects</div>
-                            <div>Click to toggle. When highlighted, extra animations showing cells the agent considered entering will be displayed</div>
-                            <div>Create a random maze. Start/Goal locations are randomized. Other cells have a 30% chance to be a wall</div>
-                            <div>Revert all cells back to empty spaces</div>
-                            <div>Revert all cells back to the previously traversed maze</div>
-                            <div>Start the algorithm on the current maze. Must have a start and a goal</div>
-                        </div>
                     </div>
 
-                    <h2>what is A* ?</h2>
-                    <p>Repeated Forward A* is a heuristic pathfinding algorithm. An agent is placed into a maze and then calculates a percieved optimal path towards the goal.
-                    The agent begins with knowledge of the size of the environment, it's own location, and the location of the goal, but no knowledge of potential obstacles.
-                    It keeps track of three values for each cell:
-                    The 'g' value tracks the current distance from the given cell to the agent. 
-                    The 'h' value tracks the shortest distance from the given cell to the goal regardless of possible obstacles. This is the heuristic 
-                    The 'f' value tracks the sum of the g and h values.                    
----Alg starts here---
-                    The agent will then determine a path following the smallest f values from it's current location to the goal.
-                    It will then proceed along this path until either the goal is reached or an obstacle is found to be in its way.
-                    The agent will update it's knowledge of the environment by tracking any walls it passed, and calculates a new path to avoid newly found obstacles.
----alg ends here---
-                    This process will repeat until the goal is reached or it determines there is no path to the goal.                   
-                    Some notes:
-                    To deal with ties in f values, this agent gives precendence to cells based on their position relative to itself in the following order: below->right->above->left
-                    While the agent does keep track of walls, it does not update the heuristic value in response, so it may waste time re-checking cells it wouldn't otherwise need to.
-                    That algorithm is called adaptive A*, which trades off time to update heuristic values for the potential to avoid unneccessary cell checks.
-                    These algorithms are not guarenteed to take an optimal path due to the possibility of running into obstacles and requiring backtracking,
-                    but they do guarentee that a path is found if it exists.
-            
-                    The toggle animations button shows every cell the agent checked when looking for a path to take.
-                    </p>
-                    <h2>lessons learned</h2>
-
+                    <h2>What is A*?</h2>
+                    <div class="description">
+                        <p>Repeated Forward A* is a heuristic pathfinding algorithm. An agent in a maze calculates a percieved optimal path towards the goal.
+                        The agent begins with knowledge of the size of the environment, it's own location, and the location of the goal, but no knowledge of potential obstacles.
+                        It keeps track of three values for each cell:</p>
+                        <ul>
+                            <li>The 'g' value tracks the current distance from the given cell to the agent. </li>
+                            <li>The 'h' value tracks the shortest distance from the given cell to the goal regardless of possible obstacles.</li>
+                            <li>The 'f' value tracks the sum of the g and h values.</li>
+                        </ul>
+                        <p>The algorithm proceeds in 3 main steps</p>
+                        <ol>
+                            <li>The agent will then determine a path following the smallest f values from it's current location to the goal.</li>
+                            <li>It will then proceed along this path until either the goal is reached or an obstacle is found to be in its way.</li>
+                            <li>The agent will update it's knowledge of the environment by tracking any walls it passed, and calculates a new path to avoid newly found obstacles.</li>
+                        </ol>
+                        <p>
+                        This process will repeat until the goal is reached or it determines there is no path to the goal.                   
+                        Some notes:
+                        To deal with ties in f values, this agent gives precendence to cells based on their position relative to itself in the following order: below->right->above->left
+                        While the agent does keep track of walls, it does not update the heuristic value in response, so it may waste time re-checking cells it wouldn't otherwise need to.
+                        That algorithm is called adaptive A*, which trades off time to update heuristic values for the potential to avoid unneccessary cell checks.
+                        These algorithms are not guarenteed to take an optimal path due to the possibility of running into obstacles and requiring backtracking,
+                        but they do guarentee that a path is found if it exists.
+                
+                        The toggle animations button shows every cell the agent checked when looking for a path to take.
+                        </p>
+                    </div>
 
                 </div>
             </div>
