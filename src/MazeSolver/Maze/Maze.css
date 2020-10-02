@@ -17,7 +17,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20px;
     margin-bottom: 20px;
 }
 
@@ -29,6 +28,21 @@
 
 .instructions{
     margin-top: 20px;
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+}
+
+.buttons{
+    display:flex;
+    flex-direction: column;
+}
+
+.button-descriptions{
+    display: flex;
+    flex-direction: column;
 }
 
 .btn-outline-primary{

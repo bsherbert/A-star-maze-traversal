@@ -977,19 +977,19 @@ export default class Maze extends Component{
                             <button 
                                 className="start-button btn-outline-primary"
                                 onClick={() => this.handleButtonClick("s")}
-                                selected>place start</button>
+                                selected>Place Start</button>
                             <button 
                                 className="goal-button btn-outline-primary"
                                 onClick={() => this.handleButtonClick("g")}
-                                >place goal</button>
+                                >Place Goal</button>
                             <button 
                                 className="wall-button btn-outline-primary"
                                 onClick={() => this.handleButtonClick("w")}
-                                >place wall</button>
+                                >Place Wall</button>
                             <button 
                                 className="clear-button btn-outline-primary"
                                 onClick={() => this.handleButtonClick("c")}
-                                >clear cell</button>
+                                >Clear Cell</button>
                         </div>    
                         <div class="menu-row-2">
                             <button
@@ -999,14 +999,14 @@ export default class Maze extends Component{
                             <button
                                 className="randomize btn-outline-primary"
                                 onClick={() => this.handleRandomizeClick()}
-                                >randomize maze</button>
+                                >Randomize Maze</button>
                             <button
                                 className="clear btn-outline-primary"
                                 onClick={() => this.handleClearClick()}
-                                >clear maze</button>      
+                                >Clear Maze</button>      
                             <button
                                 className="reset btn-outline-primary"
-                                onClick={() => this.handleResetClick()}>reload last maze</button>
+                                onClick={() => this.handleResetClick()}>Reload Last Maze</button>
                         </div>
                         <div class="menu-row-3">
                             <button className="fas btn-outline-primary"
@@ -1019,14 +1019,59 @@ export default class Maze extends Component{
                 </div>
                 <div class="instructions">
                     <h2>Instructions</h2>
-                    <p>body text here</p>
-                    controls
+                    <h4>controls</h4>
 
-                    what is A* ?
+                    <div class="controls">
+                        <div class="buttons">
+                            <button class="btn-outline-primary">Place Start</button> 
+                            <button class="btn-outline-primary">Place Goal</button> 
+                            <button class="btn-outline-primary">Place Wall</button> 
+                            <button class="btn-outline-primary">Clear Cell</button> 
+                            <button class="btn-outline-primary">Toggle Extra Animations</button> 
+                            <button class="btn-outline-primary">Randomize Maze</button> 
+                            <button class="btn-outline-primary">Clear Maze</button> 
+                            <button class="btn-outline-primary">Reload Last Maze</button> 
+                            <button class="btn-outline-primary">Start!</button> 
 
-                    tie breaking
+                        </div>
+                        <div class="button-descriptions">
+                            <div>Click to select, then click a location on the grid to select a starting point</div>
+                            <div>Click to select, then click a location on the grid to select a goal location</div>
+                            <div>Click to select, then click a location on the grid to place an obstacle that can't be passed through</div>
+                            <div>Click to select, then click a location on the grid to remove any placed objects</div>
+                            <div>Click to toggle. When highlighted, extra animations showing cells the agent considered entering will be displayed</div>
+                            <div>Create a random maze. Start/Goal locations are randomized. Other cells have a 30% chance to be a wall</div>
+                            <div>Revert all cells back to empty spaces</div>
+                            <div>Revert all cells back to the previously traversed maze</div>
+                            <div>Start the algorithm on the current maze. Must have a start and a goal</div>
+                        </div>
+                    </div>
 
-                    lessons learned
+                    <h2>what is A* ?</h2>
+                    <p>A* is a heuristic pathfinding algorithm. An agent is placed into a maze and then calculates a percieved optimal path towards the goal.
+                    The agent begins with knowledge of the size of the environment, it's own location, and the location of the goal, but no knowledge of potential obstacles.
+                    It keeps track of three values for each cell:
+                    The 'g' value tracks the current distance from the given cell to the agent. 
+                    The 'h' value tracks the shortest distance from the given cell to the goal regardless of possible obstacles. This is the heuristic 
+                    The 'f' value tracks the sum of the g and h values.                    
+---Alg starts here---
+                    The agent will then determine a path following the smallest f values from it's current location to the goal.
+                    It will then proceed along this path until either the goal is reached or an obstacle is found to be in its way.
+                    The agent will update it's knowledge of the environment by tracking any walls it passed, and calculates a new path to avoid newly found obstacles.
+---alg ends here---
+                    This process will repeat until the goal is reached or it determines there is no path to the goal.                   
+                    Some notes:
+                    To deal with ties in f values, this agent gives precendence to cells based on their position relative to itself in the following order: below->right->above->left
+                    While the agent does keep track of walls, it does not update the heuristic value in response, so it may waste time re-checking cells it wouldn't otherwise need to.
+                    That algorithm is called adaptive A*, which trades off time to update heuristic values for the potential to avoid unneccessary cell checks.
+                    These algorithms are not guarenteed to take an optimal path due to the possibility of running into obstacles and requiring backtracking,
+                    but they do guarentee that a path is found if it exists.
+            
+                    The toggle animations button shows every cell the agent checked when looking for a path to take.
+                    </p>
+                    <h2>lessons learned</h2>
+
+
                 </div>
             </div>
         );
