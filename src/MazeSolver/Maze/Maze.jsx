@@ -1023,15 +1023,15 @@ export default class Maze extends Component{
 
                     <div class="controls">
                         <div class="buttons">
-                            <button class="btn-outline-primary">Place Start</button> 
-                            <button class="btn-outline-primary">Place Goal</button> 
-                            <button class="btn-outline-primary">Place Wall</button> 
-                            <button class="btn-outline-primary">Clear Cell</button> 
-                            <button class="btn-outline-primary">Toggle Extra Animations</button> 
-                            <button class="btn-outline-primary">Randomize Maze</button> 
-                            <button class="btn-outline-primary">Clear Maze</button> 
-                            <button class="btn-outline-primary">Reload Last Maze</button> 
-                            <button class="btn-outline-primary">Start!</button> 
+                            <button>Place Start</button> 
+                            <button>Place Goal</button> 
+                            <button>Place Wall</button> 
+                            <button>Clear Cell</button> 
+                            <button>Toggle Extra Animations</button> 
+                            <button>Randomize Maze</button> 
+                            <button>Clear Maze</button> 
+                            <button>Reload Last Maze</button> 
+                            <button>Start!</button> 
 
                         </div>
                         <div class="button-descriptions">

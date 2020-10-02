@@ -57,3 +57,10 @@
 .btn-outline-primary:hover{
     background-color: #4ba2ff;
 }
+
+.controls button{
+    pointer-events: none;
+    
+    color: #007bff;
+    border-color: #007bff;
+}
