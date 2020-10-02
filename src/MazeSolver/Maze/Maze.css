@@ -60,6 +60,7 @@
 
 .btn-outline-primary{
     margin: 2px;
+    box-shadow: 0px 1px 1px black;
 }
 
 .btn-outline-primary:focus{
@@ -75,6 +76,7 @@
     pointer-events: none;
     color: #007bff;
     border-color: #007bff;
+    box-shadow: 0px 1px 1px black;
 }
 
 .description{
@@ -88,7 +90,7 @@
     width: 50%;
 }
 .description li{
-    width: 400px;
+    width: 525px;
     padding-bottom: 10px;
 }
 

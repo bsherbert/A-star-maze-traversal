@@ -1080,7 +1080,7 @@ export default class Maze extends Component{
                         <p>This process will repeat until the goal is reached or it determines there is no path to the goal.</p>
                         <h5>Additional Comments</h5>
                         <ul>
-                            <li>To deal with ties in f values, this agent gives precendence to cells based on their position relative to itself in the following order: below->right->above->left</li>                        
+                            <li>To deal with ties in f values, this agent gives precendence to cells based on their position relative to itself in the following order: <br/>below->right->above->left</li>                        
                             <li>While the agent does keep track of walls, it does not update the heuristic value in response, so it may waste time re-checking cells it wouldn't otherwise need to.</li>
                             <li>That algorithm is called adaptive A*, which trades off time to update heuristic values for the potential to avoid unneccessary cell checks.</li>
                             <li>These algorithms are not guarenteed to take an optimal path due to the possibility of running into obstacles and requiring backtracking, but they do guarentee that a path is found if it exists.</li>                
