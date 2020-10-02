@@ -1048,7 +1048,7 @@ export default class Maze extends Component{
                     </div>
 
                     <h2>what is A* ?</h2>
-                    <p>A* is a heuristic pathfinding algorithm. An agent is placed into a maze and then calculates a percieved optimal path towards the goal.
+                    <p>Repeated Forward A* is a heuristic pathfinding algorithm. An agent is placed into a maze and then calculates a percieved optimal path towards the goal.
                     The agent begins with knowledge of the size of the environment, it's own location, and the location of the goal, but no knowledge of potential obstacles.
                     It keeps track of three values for each cell:
                     The 'g' value tracks the current distance from the given cell to the agent. 
