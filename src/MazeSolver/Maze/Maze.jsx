@@ -1020,6 +1020,13 @@ export default class Maze extends Component{
                 <div class="instructions">
                     <h2>Instructions</h2>
                     <p>body text here</p>
+                    controls
+
+                    what is A* ?
+
+                    tie breaking
+
+                    lessons learned
                 </div>
             </div>
         );

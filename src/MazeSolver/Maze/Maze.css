@@ -13,16 +13,12 @@
 .topbar{
     background-color: #cccccc;
     width: 1300px;    
-    position: relative; 
-    top: -22px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.maze{
-    margin-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .menu{
