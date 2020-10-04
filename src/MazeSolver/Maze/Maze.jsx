@@ -5,6 +5,9 @@ import Cell from '../Cell/Cell'
 import PriorityQueue from '../PriorityQueue';
 import DataCell from '../DataCell';
 
+import email from '../../images/email.png';
+
+
 //global variables
 const numColumns = 50;
 const numRows = 25;
@@ -969,6 +972,8 @@ export default class Maze extends Component{
         return (
             //renders menu buttons
             //renders mazeSize cells in 5 rows of 5
+
+        <div>
             <div class="content">
                 <div class="topbar">
                     <h1>A* MAZE TRAVERSAL</h1>
@@ -1089,7 +1094,21 @@ export default class Maze extends Component{
                     </div>
 
                 </div>
+
             </div>
+            <div id="footer" className="footer">
+                    <div className="footer-box">
+                        <div className="top-footer">
+                            <h5>2020 Brian Sherbert. All rights reserved.</h5>
+                        </div>
+                        <div className="bottom-footer">
+                            <img src={email} alt="email" />
+                            <p>bsherbert12@gmail.com</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+            
         );
     }
 }
