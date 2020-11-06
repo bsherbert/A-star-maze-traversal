@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8669d78140a92affacba60da5d2890fc",
+    "revision": "7bfadefcd7c5dee5f0723ec6831d4b78",
     "url": "/A-star-maze-traversal/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/A-star-maze-traversal/static/css/2.d9ad5f5c.chunk.css"
   },
   {
-    "revision": "3604bdf8bdd92a7cb847",
+    "revision": "06c1fd154192166e8d5b",
     "url": "/A-star-maze-traversal/static/css/main.d7a5eba7.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/A-star-maze-traversal/static/js/2.0e408251.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3604bdf8bdd92a7cb847",
-    "url": "/A-star-maze-traversal/static/js/main.8889056d.chunk.js"
+    "revision": "06c1fd154192166e8d5b",
+    "url": "/A-star-maze-traversal/static/js/main.71c85e63.chunk.js"
   },
   {
     "revision": "99e7e0f8684b09396ca8",

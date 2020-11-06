@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/A-star-maze-traversal/precache-manifest.42bf80386565f2fce30ff7e1913cb0d5.js"
+  "/A-star-maze-traversal/precache-manifest.413b002ef3a36a56f45688baf12414ba.js"
 );
 
 self.addEventListener('message', (event) => {
